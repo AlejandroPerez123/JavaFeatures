@@ -1,4 +1,4 @@
-package objectComparison;
+package General;
 
 public class Car {
     private String color;
@@ -48,4 +48,12 @@ public class Car {
 
     }
 
+    @Override
+    public String toString() {
+        return "Car{" +
+                "color='" + color + '\'' +
+                ", maker='" + maker + '\'' +
+                ", year=" + year +
+                '}';
+    }
 }

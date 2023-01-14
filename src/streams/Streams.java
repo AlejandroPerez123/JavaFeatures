@@ -1,11 +1,8 @@
 package streams;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.OptionalDouble;
+import General.Account;
 
-
-
+import java.util.*;
 
 
 public class Streams {
@@ -33,24 +30,32 @@ public class Streams {
 
     public static void main(String[] args) {
 
-        // Add 1 to each balance
+        System.out.println("-------------Add 1 to each balance");
         accounts.stream().forEach( account -> account.setBalance(account.getBalance()+1));
         System.out.println(accounts.toString());
 
-        // Print accounts with balance higher than 5,000.0
+        System.out.println("---------------Print accounts with balance higher than 5,000.0");
         accounts.stream().filter(account -> account.getBalance()>5000.0).forEach(System.out::println);
 
-        // Print total balance
+        System.out.println("-------------Print total balance");
         double balanceSum =  accounts.stream().map(Account::getBalance).reduce(0.0,Double::sum);
         System.out.println("Sum of balance from all accounts: "+balanceSum);
 
-        // remove 2424
+        System.out.println("-------------Remove 2424");
         accounts.removeIf(account -> account.getNumber()== 2424);
         System.out.println(accounts.toString());
 
-        // print average account balance
+        System.out.println("---------------print average account balance");
         double average = accounts.stream().mapToDouble(Account::getBalance).average().getAsDouble();
         System.out.println("Average Balance: "+average);
+
+        System.out.println("-------------Max account balance");
+        //Optional<Account> accountWithMaxBalance = accounts.stream().max(Comparator.comparing(Account::getBalance));
+        //System.out.println(accountWithMaxBalance.orElseGet(null).getBalance());
+
+        Account accountWithMaxBalance = accounts.stream().max(Comparator.comparing(Account::getBalance))
+                .orElseThrow(NoSuchElementException::new);;
+
     }
 
 }

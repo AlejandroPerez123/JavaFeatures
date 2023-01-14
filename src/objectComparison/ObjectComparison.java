@@ -1,5 +1,7 @@
 package objectComparison;
 
+import General.Car;
+
 public class ObjectComparison {
 
     public static void main(String[] args){

@@ -1,4 +1,4 @@
-package streams;
+package General;
 
 public class Account {
 
