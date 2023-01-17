@@ -1,6 +1,8 @@
 package streams;
 
 import General.Account;
+import General.Car;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
 import java.util.*;
 
@@ -54,7 +56,19 @@ public class Streams {
         //System.out.println(accountWithMaxBalance.orElseGet(null).getBalance());
 
         Account accountWithMaxBalance = accounts.stream().max(Comparator.comparing(Account::getBalance))
-                .orElseThrow(NoSuchElementException::new);;
+                .orElseThrow(NoSuchElementException::new);
+
+
+        System.out.println("-----------CARS");
+        Car car1 = new Car("red", "mercedes-benz", 2022);
+        Car car2 = new Car("black", "audi", 2022);
+        Car car3 = new Car("white", "toyota", 2020);
+        Car car4 = new Car("white", "bmw", 2021);
+        Car car5 = new Car("black", "audi", 2022);
+
+
+        System.out.println();
+
 
     }
 

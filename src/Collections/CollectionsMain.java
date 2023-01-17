@@ -3,6 +3,7 @@ package Collections;
 import General.Car;
 
 import java.util.*;
+import General.Utils;
 
 public class CollectionsMain {
 
@@ -27,7 +28,7 @@ public class CollectionsMain {
         carArrayList.add(null);
 
         System.out.println("ArrayList-----");
-        printCollection(carArrayList);
+        General.Utils.printCollection(carArrayList);
 
 
         Set<Car> carSet = new HashSet<>();
@@ -42,23 +43,25 @@ public class CollectionsMain {
 
 
         System.out.println("HashSet-----");
-        printCollection(carSet);
+        General.Utils.printCollection(carSet);
+
+
+
+        String[] stringArray = {"car","bike","bus"};
+        List<String> stringList = Arrays.asList(stringArray);
+        General.Utils.printCollection(stringList);
+        System.out.println("Sort collection");
+        Collections.sort(stringList);
+        General.Utils.printCollection(stringList);
+
+        String[] stringArray2 = stringList.toArray(new String[stringList.size()]);
+        General.Utils.printArray(stringArray2);
 
 
 
     }
 
-    static  <T> void printCollection(Collection<T> collection){
-        for (T object:
-             collection) {
-            if(object!=null){
-                System.out.println(object.toString());
-            }else{
-                System.out.println("null");
-            }
-        }
 
-    }
 
 
 

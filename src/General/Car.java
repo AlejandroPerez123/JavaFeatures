@@ -1,6 +1,6 @@
 package General;
 
-public class Car {
+public class Car  implements Cloneable {
     private String color;
     private String maker;
     private Integer year;
@@ -56,4 +56,12 @@ public class Car {
                 ", year=" + year +
                 '}';
     }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException
+    {
+        return super.clone();
+    }
+
+
 }
