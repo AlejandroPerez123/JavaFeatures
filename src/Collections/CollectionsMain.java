@@ -42,6 +42,14 @@ public class CollectionsMain {
         carSet.add(null);
 
 
+        System.out.println("print with iterator");
+
+        Iterator<Car> carIteraror = carSet.iterator();
+        while (carIteraror.hasNext()){
+            System.out.println(carIteraror.next());
+        }
+
+
         System.out.println("HashSet-----");
         General.Utils.printCollection(carSet);
 
